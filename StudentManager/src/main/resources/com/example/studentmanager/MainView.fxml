@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="581.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentmanager.MainController">
+    <AnchorPane layoutY="6.0" prefHeight="543.0" prefWidth="228.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Button layoutX="24.0" layoutY="320.0" mnemonicParsing="false" onAction="#Add_students" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: green;" text="Add" />
+        <Button layoutX="24.0" layoutY="376.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: Orange;" text="Update" />
+        <Button layoutX="24.0" layoutY="430.0" mnemonicParsing="false" onAction="#Delete" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: red;" text="Delete" />
+        <TextField fx:id="txt_std_fullName" layoutX="24.0" layoutY="62.0" onKeyReleased="#search_user" prefHeight="30.0" prefWidth="180.0" promptText="Full Name" />
+        <TextField fx:id="txt_email" layoutX="24.0" layoutY="110.0" prefHeight="30.0" prefWidth="180.0" promptText="Email" />
+        <TextField fx:id="txt_major" layoutX="24.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" promptText="Major" />
+        <TextField fx:id="txt_std_id" layoutX="23.0" layoutY="21.0" prefHeight="23.0" prefWidth="180.0" promptText="Student ID" />
+    </AnchorPane>
+    <TableView fx:id="table_students" layoutX="228.0" layoutY="76.0" onMouseClicked="#getSelected" prefHeight="474.0" prefWidth="353.0">
+      <columns>
+          <TableColumn fx:id="col_std_id" prefWidth="75.0" text="Student ID" />
+          <TableColumn fx:id="col_std_name" prefWidth="92.79998779296875" text="Full Name" />
+          <TableColumn fx:id="col_email" prefWidth="75.20001220703125" text="Email" />
+          <TableColumn fx:id="col_major" prefWidth="97.0" text="Major" />
+      </columns>
+    </TableView>
+    <TextField fx:id="filterField" layoutX="350.0" layoutY="30.0" promptText="Search" />
+</AnchorPane>
